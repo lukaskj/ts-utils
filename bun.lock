@@ -2,7 +2,7 @@
   "lockfileVersion": 1,
   "workspaces": {
     "": {
-      "name": "@lukaskj/lk-utils",
+      "name": "@lukaskj/ts-utils",
       "dependencies": {
         "secure-json-parse": "^4.0.0",
       },

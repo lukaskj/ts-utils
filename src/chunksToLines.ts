@@ -5,7 +5,7 @@
  * ```ts
  * import { pipeline } from "node:stream/promises";
  * import { createReadStream } from "node:fs";
- * import { chunksToLines } from "@lukaskj/lk-utils";
+ * import { chunksToLines } from "@lukaskj/ts-utils";
  *
  * const readStream = createReadStream("path/to/file.txt", { encoding: "utf-8" });
  * await pipeline(readStream, chunksToLines, process.stdout).catch((err) => {

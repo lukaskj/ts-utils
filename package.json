@@ -1,5 +1,5 @@
 {
-  "name": "@lukaskj/lk-utils",
+  "name": "@lukaskj/ts-utils",
   "version": "1.0.0",
   "module": "src/index.ts",
   "type": "module",

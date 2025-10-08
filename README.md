@@ -1,1 +1,1 @@
-# @lukaskj/lk-utils
+# @lukaskj/ts-utils
