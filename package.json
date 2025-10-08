@@ -1,0 +1,81 @@
+{
+  "name": "@lukaskj/lk-utils",
+  "version": "1.0.0",
+  "module": "src/index.ts",
+  "type": "module",
+  "scripts": {
+    "prepare": "husky",
+    "init:husky": "bunx husky init",
+    "build": "bun run scripts/build.ts",
+    "declaration": "bunx tsc -p tsconfig.build.json --outDir dist --declaration --emitDeclarationOnly",
+    "build:all": "rm -rf dist/ && bun run declaration && bun run scripts/build.ts",
+    "dev": "bun run src/index.ts",
+    "lint": "tsc -p . --noEmit && biome lint --write",
+    "format": "biome format --write",
+    "test:cov": "bun run test --coverage",
+    "test": "bun test --env-file .env.test"
+  },
+  "dependencies": {
+    "secure-json-parse": "^4.0.0"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.1.4",
+    "@faker-js/faker": "^9.9.0",
+    "@types/bun": "latest",
+    "@types/node": "^24.2.1",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.1.5",
+    "typescript": "^5.9.2"
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "bun format",
+      "bun lint"
+    ]
+  },
+  "main": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "default": "./dist/index.mjs",
+        "types": "./dist/index.d.ts"
+      },
+      "require": {
+        "default": "./dist/index.cjs",
+        "types": "./dist/index.d.ts"
+      }
+    },
+    "./neverthrow": {
+      "import": {
+        "default": "./dist/neverthrow/index.mjs",
+        "types": "./dist/neverthrow/index.d.ts"
+      },
+      "require": {
+        "default": "./dist/neverthrow/index.cjs",
+        "types": "./dist/neverthrow/index.d.ts"
+      }
+    }
+  },
+  "bin": {
+    "bun-base-template": "dist/index.mjs",
+    "bbt": "dist/index.mjs"
+  },
+  "engines": {
+    "node": ">=23",
+    "bun": ">= 1.2.20"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lukaskj/bun-base-template.git"
+  },
+  "bugs": {
+    "url": "https://github.com/lukaskj/bun-base-template/issues"
+  },
+  "homepage": "https://github.com/lukaskj/bun-base-template#readme",
+  "files": [
+    "dist/**/*",
+    "!**/test/**",
+    "!node_modules"
+  ]
+}
