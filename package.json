@@ -55,6 +55,16 @@
         "default": "./dist/neverthrow/index.cjs",
         "types": "./dist/neverthrow/index.d.ts"
       }
+    },
+    "./colors": {
+      "import": {
+        "default": "./dist/colors/index.mjs",
+        "types": "./dist/colors/index.d.ts"
+      },
+      "require": {
+        "default": "./dist/colors/index.cjs",
+        "types": "./dist/colors/index.d.ts"
+      }
     }
   },
   "bin": {
