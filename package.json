@@ -67,10 +67,6 @@
       }
     }
   },
-  "bin": {
-    "bun-base-template": "dist/index.mjs",
-    "bbt": "dist/index.mjs"
-  },
   "engines": {
     "node": ">=23",
     "bun": ">= 1.2.20"
