@@ -6,7 +6,7 @@ console.log("Starting build...");
 const start = Date.now();
 
 const buildConfig: Bun.BuildConfig = {
-  entrypoints: ["src/index.ts", "src/neverthrow/index.ts", "src/colors/index.ts"],
+  entrypoints: ["src/index.ts", "src/neverthrow/index.ts", "src/colors/index.ts", "src/cache/index.ts"],
   outdir: "dist",
   target: "node",
   sourcemap: "inline",

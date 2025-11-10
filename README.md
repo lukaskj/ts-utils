@@ -20,6 +20,7 @@ bun add @lukaskj/ts-utils
 ```
 
 ## Features
+Documentation folder: [docs/](docs/)
 
 ### Error Handling
 

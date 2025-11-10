@@ -23,6 +23,7 @@
     "@faker-js/faker": "^9.9.0",
     "@types/bun": "latest",
     "@types/node": "^24.2.1",
+    "bun-mock-extended": "^3.0.5",
     "husky": "^9.1.7",
     "lint-staged": "^16.1.5",
     "typescript": "^5.9.2"
@@ -64,6 +65,16 @@
       "require": {
         "default": "./dist/colors/index.cjs",
         "types": "./dist/colors/index.d.ts"
+      }
+    },
+    "./cache": {
+      "import": {
+        "default": "./dist/cache/index.mjs",
+        "types": "./dist/cache/index.d.ts"
+      },
+      "require": {
+        "default": "./dist/cache/index.cjs",
+        "types": "./dist/cache/index.d.ts"
       }
     }
   },

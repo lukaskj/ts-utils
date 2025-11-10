@@ -6,3 +6,16 @@ preload = ["./test/testSetup.ts"]
 coverageSkipTestFiles = true
 coverageIgnoreSourcemaps = true
 coverageThreshold = { line = 0.8, function = 0.8, statement = 0.8 }
+coverageReporter = ["text", "lcov"]
+coverageDir = "./coverage"
+
+coveragePathIgnorePatterns = [
+  "**/*.spec.ts",
+  "**/*.test.ts",
+  "**/*.fixture.ts",
+  "test/testSetup.ts",
+  "src/**/types.ts",
+  "src/**/types/**",
+  "*.config.js",
+  "dist/**",
+]
