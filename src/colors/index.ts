@@ -9,6 +9,7 @@ enum COLORS_MAP {
   yellow = "\x1b[0;33m",
   blue = "\x1b[0;34m",
   purple = "\x1b[0;35m",
+  magenta = "\x1b[0;35m",
   cyan = "\x1b[0;36m",
   white = "\x1b[0;37m",
 
@@ -18,6 +19,7 @@ enum COLORS_MAP {
   yellowBright = "\x1b[0;93m",
   blueBright = "\x1b[0;94m",
   purpleBright = "\x1b[0;95m",
+  magentaBright = "\x1b[0;95m",
   cyanBright = "\x1b[0;96m",
   whiteBright = "\x1b[0;97m",
 
@@ -26,6 +28,7 @@ enum COLORS_MAP {
   yellowBold = "\x1b[1;33m",
   blueBold = "\x1b[1;34m",
   purpleBold = "\x1b[1;35m",
+  magentaBold = "\x1b[1;35m",
   cyanBold = "\x1b[1;36m",
   whiteBold = "\x1b[1;37m",
 
@@ -35,6 +38,7 @@ enum COLORS_MAP {
   yellowUnderline = "\x1b[4;33m",
   blueUnderline = "\x1b[4;34m",
   purpleUnderline = "\x1b[4;35m",
+  magentaUnderline = "\x1b[4;35m",
   cyanUnderline = "\x1b[4;36m",
   whiteUnderline = "\x1b[4;37m",
 
@@ -44,6 +48,7 @@ enum COLORS_MAP {
   bgYellow = "\x1b[43m",
   bgBlue = "\x1b[44m",
   bgPurple = "\x1b[45m",
+  bgMagenta = "\x1b[45m",
   bgCyan = "\x1b[46m",
   bgWhite = "\x1b[47m",
 
@@ -53,6 +58,7 @@ enum COLORS_MAP {
   bgYellowBright = "\x1b[103m",
   bgBlueBright = "\x1b[104m",
   bgPurpleBright = "\x1b[105m",
+  bgMagentaBright = "\x1b[105m",
   bgCyanBright = "\x1b[106m",
   bgWhiteBright = "\x1b[107m",
 }
