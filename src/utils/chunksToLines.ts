@@ -5,17 +5,23 @@
  * ```ts
  * import { pipeline } from "node:stream/promises";
  * import { createReadStream } from "node:fs";
- * import { chunksToLines } from "@lukaskj/ts-utils";
+ * import { streamToLines } from "@lukaskj/ts-utils";
  *
+ * async function processLine(chunk: AsyncIterable<string>) {
+ *   for await (const line of chunk) {
+ *     console.log(line);
+ *     yield line;
+ *   }
+ * }
  * const readStream = createReadStream("path/to/file.txt", { encoding: "utf-8" });
- * await pipeline(readStream, chunksToLines, process.stdout).catch((err) => {
+ * await pipeline(readStream, streamToLines, process.stdout).catch((err) => {
  *   console.error(err);
  *   process.exit(1);
  * });
  * ```
  * @param chunks
  */
-export async function* chunksToLines(chunks: AsyncIterable<string | Uint8Array>) {
+export async function* streamToLines(chunks: AsyncIterable<string | Uint8Array>) {
   let previous = "";
 
   for await (const chunk of chunks) {
@@ -35,3 +41,8 @@ export async function* chunksToLines(chunks: AsyncIterable<string | Uint8Array>)
     yield previous;
   }
 }
+
+/**
+ * @deprecated use streamToLines
+ */
+export const chunksToLines = streamToLines;
