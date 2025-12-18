@@ -7,7 +7,7 @@
     "prepare": "husky",
     "init:husky": "bunx husky init",
     "build": "bun run scripts/build.ts",
-    "declaration": "bunx tsc -p tsconfig.build.json --outDir dist --declaration --emitDeclarationOnly",
+    "declaration": "bunx tsc -p tsconfig.build.json --declaration --emitDeclarationOnly",
     "build:all": "rm -rf dist/ && bun run declaration && bun run scripts/build.ts",
     "dev": "bun run src/index.ts",
     "lint": "tsc -p . --noEmit && biome lint --write",
@@ -34,48 +34,32 @@
       "bun lint"
     ]
   },
-  "main": "dist/index.mjs",
-  "types": "dist/index.d.ts",
+  "main": "dist/esm/index.mjs",
+  "types": "dist/types/index.d.ts",
   "exports": {
     ".": {
-      "import": {
-        "default": "./dist/index.mjs",
-        "types": "./dist/index.d.ts"
-      },
-      "require": {
-        "default": "./dist/index.cjs",
-        "types": "./dist/index.d.ts"
-      }
+      "types": "./dist/types/index.d.ts",
+      "import": "./dist/esm/index.mjs",
+      "require": "./dist/cjs/index.cjs",
+      "default": "./dist/esm/index.mjs"
     },
     "./neverthrow": {
-      "import": {
-        "default": "./dist/neverthrow/index.mjs",
-        "types": "./dist/neverthrow/index.d.ts"
-      },
-      "require": {
-        "default": "./dist/neverthrow/index.cjs",
-        "types": "./dist/neverthrow/index.d.ts"
-      }
+      "types": "./dist/types/neverthrow/index.d.ts",
+      "import": "./dist/esm/neverthrow/index.mjs",
+      "require": "./dist/cjs/neverthrow/index.cjs",
+      "default": "./dist/esm/neverthrow/index.mjs"
     },
     "./colors": {
-      "import": {
-        "default": "./dist/colors/index.mjs",
-        "types": "./dist/colors/index.d.ts"
-      },
-      "require": {
-        "default": "./dist/colors/index.cjs",
-        "types": "./dist/colors/index.d.ts"
-      }
+      "types": "./dist/types/colors/index.d.ts",
+      "import": "./dist/esm/colors/index.mjs",
+      "require": "./dist/cjs/colors/index.cjs",
+      "default": "./dist/esm/colors/index.mjs"
     },
     "./cache": {
-      "import": {
-        "default": "./dist/cache/index.mjs",
-        "types": "./dist/cache/index.d.ts"
-      },
-      "require": {
-        "default": "./dist/cache/index.cjs",
-        "types": "./dist/cache/index.d.ts"
-      }
+      "types": "./dist/types/cache/index.d.ts",
+      "import": "./dist/esm/cache/index.mjs",
+      "require": "./dist/cjs/cache/index.cjs",
+      "default": "./dist/esm/cache/index.mjs"
     }
   },
   "engines": {

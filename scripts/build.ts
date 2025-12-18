@@ -17,6 +17,7 @@ const buildConfig: Bun.BuildConfig = {
 
 const esmBuild = await Bun.build({
   ...buildConfig,
+  outdir: "dist/esm",
   format: "esm",
 });
 outputLogs(esmBuild);
@@ -34,6 +35,7 @@ if (esmBuild.success) {
 
 const cjsBuild = await Bun.build({
   ...buildConfig,
+  outdir: "dist/cjs",
   format: "cjs",
 });
 
