@@ -24,14 +24,14 @@ Documentation folder: [docs/](docs/)
 
 ### Error Handling
 
-#### `tryCatch` and `tryCatchAsync`
+#### `tryCatchSync` and `tryCatch`
 Type-safe error handling utilities inspired by Rust's Result type.
 
 ```typescript
-import { tryCatch, tryCatchAsync } from '@lukaskj/ts-utils';
+import { tryCatchSync, tryCatch } from '@lukaskj/ts-utils';
 
 // Synchronous usage
-const [data, error] = tryCatch(() => someRiskyOperation());
+const { data, error } = tryCatchSync(() => someRiskyOperation());
 if (error) {
   console.error(error);
 } else {
@@ -39,7 +39,7 @@ if (error) {
 }
 
 // Asynchronous usage
-const [data, error] = await tryCatchAsync(somePromise);
+const { data, error } = await tryCatch(somePromise);
 if (error) {
   console.error(error);
 } else {
