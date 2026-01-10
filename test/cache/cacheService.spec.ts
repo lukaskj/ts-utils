@@ -424,7 +424,7 @@ describe("cache", () => {
       // @ts-expect-error - accessing private method for testing
       const result = cache.isExpired(metadata);
 
-      expect(result).toBeFalse();
+      expect(result).toBeTrue();
     });
 
     it("should return true when expiresAt is undefined and fallback is expired", () => {
@@ -447,11 +447,14 @@ describe("cache", () => {
     it("should handle expiration with threshold correctly", () => {
       const cache = new Cache();
       const now = Date.now();
+      const ttl = 10000;
+      const threshold = 1000;
+
       const metadata = {
         createdAt: now - 8000,
-        ttlMs: 10000,
-        expiresAt: now - 8000 + 10000 - 2000, // created + ttl - threshold
-        expirationThresholdMs: 2000,
+        ttlMs: ttl,
+        expiresAt: now - 8000 + ttl - threshold, // created + ttl - threshold
+        expirationThresholdMs: threshold,
       };
 
       // @ts-expect-error - accessing private method for testing

@@ -161,6 +161,6 @@ export class Cache<TAdapter extends ICacheAdapter | undefined = undefined> {
       return true;
     }
 
-    return Date.now() > expirationTime;
+    return Date.now() >= expirationTime;
   }
 }
