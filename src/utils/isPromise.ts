@@ -1,5 +1,4 @@
 /**
- * @deprecated Use node:util/types::isPromise
  * @param value unknown
  * @returns
  */

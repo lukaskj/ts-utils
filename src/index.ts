@@ -3,6 +3,7 @@ export * from "./utils/chunksToLines.ts";
 export * from "./utils/isNullOrUndefined.ts";
 export * from "./utils/isObject.ts";
 export * from "./utils/isPrimitive.ts";
+export * from "./utils/isPromise.ts";
 export * from "./utils/jsonParser.ts";
 export * from "./utils/randomString.ts";
 export * from "./utils/sleep.ts";

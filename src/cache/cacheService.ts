@@ -1,5 +1,5 @@
-import { isPromise } from "node:util/types";
 import { isCallable } from "../utils/isCallable.ts";
+import { isPromise } from "../utils/isPromise.ts";
 import type { CacheMetadataOptions, CacheOptions, CacheWithMetadata, ValueLoader } from "./internal/types.ts";
 import type { CacheMetadata, ICacheAdapter } from "./types.ts";
 
