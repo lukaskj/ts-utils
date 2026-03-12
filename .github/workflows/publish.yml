@@ -39,6 +39,11 @@ jobs:
         run: |
           echo "Version to publish: ${{ steps.get_version.outputs.VERSION }}"
 
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+          registry-url: "https://registry.npmjs.org"
+
       - name: Publish to NPM
         run: |
           npm version --no-git-tag-version ${{ steps.get_version.outputs.VERSION }}
