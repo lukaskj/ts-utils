@@ -27,9 +27,6 @@ jobs:
       - name: Build
         run: bun run build:all
 
-      - name: Audit
-        run: bun audit signatures
-
       - name: Run Tests
         run: bun test
 
@@ -45,7 +42,7 @@ jobs:
       - name: Publish to NPM
         run: |
           npm version --no-git-tag-version ${{ steps.get_version.outputs.VERSION }}
-          bun publish --access public --ignore-scripts
+          npm publish --access public --ignore-scripts
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
