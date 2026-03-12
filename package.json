@@ -68,12 +68,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/lukaskj/bun-base-template.git"
+    "url": "git+https://github.com/lukaskj/ts-utils.git"
   },
   "bugs": {
-    "url": "https://github.com/lukaskj/bun-base-template/issues"
+    "url": "https://github.com/lukaskj/ts-utils/issues"
   },
-  "homepage": "https://github.com/lukaskj/bun-base-template#readme",
+  "homepage": "https://github.com/lukaskj/ts-utils#readme",
   "files": [
     "dist/**/*",
     "!**/test/**",
